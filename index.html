@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soap's List</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        h1 { text-align: center; color: #ffffff; margin-bottom: 12px; }
+        
+        p.subtitle { 
+            text-align: center; 
+            color: #d0d0d0; 
+            font-size: 1.0rem; 
+            font-weight: 500; 
+            background: #1e1e1e; 
+            border: 1px solid #333; 
+            display: table; 
+            margin: 0 auto 30px auto; 
+            padding: 6px 16px; 
+            border-radius: 20px; 
+        }
+        
+        .wishlist-container { display: flex; flex-direction: column; gap: 16px; }
+        
+        .wishlist-item {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .wishlist-item:hover { border-color: #555; transform: translateY(-2px); }
+        .rank { font-size: 1.4rem; font-weight: bold; color: #888; min-width: 28px; text-align: center; line-height: 1.2; }
+        .item-details { flex-grow: 1; min-width: 0; }
+        
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        
+        .item-desc {
+            font-size: 0.85rem;
+            color: #9e9e9e;
+            line-height: 1.45;
+            margin-bottom: 14px;
+        }
+        .item-desc.no-meta {
+            margin-bottom: 0;
+        }
+        
+        .item-meta {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.95rem;
+            width: 100%;
+        }
+        .price { font-weight: bold; }
+        .buy-btn {
+            padding: 7px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        /* Chewy (Blue) */
+        .price.chewy-price { color: #4fc3f7; }
+        .buy-btn.chewy-btn {
+            background: #18222d;
+            color: #ffffff;
+            border: 1px solid #4fc3f7;
+        }
+        .buy-btn.chewy-btn:hover {
+            background: #1e2d3d;
+            border-color: #81d4fa;
+        }
+
+        /* Liunic on Things (Coral/Pink) */
+        .price.liunic-price { color: #f48fb1; }
+        .buy-btn.liunic-btn {
+            background: #18222d;
+            color: #ffffff;
+            border: 1px solid #f48fb1;
+        }
+        .buy-btn.liunic-btn:hover {
+            background: #1e2d3d;
+            border-color: #f8bbd0;
+        }
+
+        /* Lola (Warm Gold) */
+        .price.lola-price { color: #ffd54f; }
+        .buy-btn.lola-btn {
+            background: #18222d;
+            color: #ffffff;
+            border: 1px solid #ffd54f;
+        }
+        .buy-btn.lola-btn:hover {
+            background: #1e2d3d;
+            border-color: #ffe082;
+        }
+
+        /* Smith Tea (Sage Green) */
+        .buy-btn.smith-btn {
+            background: #18222d;
+            color: #ffffff;
+            border: 1px solid #81c784;
+        }
+        .buy-btn.smith-btn:hover {
+            background: #1e2d3d;
+            border-color: #a5d6a7;
+        }
+
+        /* Bissell (Teal) */
+        .price.bissell-price { color: #4db6ac; }
+        .buy-btn.bissell-btn {
+            background: #18222d;
+            color: #ffffff;
+            border: 1px solid #4db6ac;
+        }
+        .buy-btn.bissell-btn:hover {
+            background: #1e2d3d;
+            border-color: #80cbc4;
+        }
+
+        @media (max-width: 500px) {
+            .wishlist-item {
+                padding: 16px;
+                gap: 12px;
+            }
+            .item-desc {
+                margin-bottom: 12px;
+            }
+            .item-desc.no-meta {
+                margin-bottom: 0;
+            }
+            .item-meta {
+                justify-content: flex-end;
+                margin-top: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Soap's List</h1>
+    <p class="subtitle">In order of preference</p>
+
+    <div class="wishlist-container">
+
+        <!-- 1 -->
+        <div class="wishlist-item">
+            <div class="rank">1</div>
+            <div class="item-details">
+                <div class="item-title">Cat Sumo</div>
+                <div class="item-desc">A cat toy that you can use to hand wrestle your cats! Yam would be very happy.</div>
+                <div class="item-meta">
+                    <span class="price chewy-price">$49.99</span>
+                    <a href="https://www.chewy.com/catsumo-original-wrestler-glove/dp/4427870" target="_blank" class="buy-btn chewy-btn">Buy on Chewy</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="wishlist-item">
+            <div class="rank">2</div>
+            <div class="item-details">
+                <div class="item-title">Laptop Bag</div>
+                <div class="item-desc">A multi use bag that I have wanted for a long time!</div>
+                <div class="item-meta">
+                    <span class="price liunic-price">$105.00</span>
+                    <a href="https://liuniconthings.com/products/fruit-pops-laptop-bag" target="_blank" class="buy-btn liunic-btn">Buy on Liunic on Things</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="wishlist-item">
+            <div class="rank">3</div>
+            <div class="item-details">
+                <div class="item-title">Miffy CD Holder</div>
+                <div class="item-desc">My brother gifted me a portable CD player for my birthday, it would be great to have this to hold my CD collection!</div>
+                <div class="item-meta">
+                    <span class="price lola-price">$34.30</span>
+                    <a href="https://lola.camera/products/lola-cd-vinyl-stand-miffy" target="_blank" class="buy-btn lola-btn">Buy on Lola</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="wishlist-item">
+            <div class="rank">4</div>
+            <div class="item-details">
+                <div class="item-title">Smith Tea</div>
+                <div class="item-desc">Get me any kind or amount! I love trying new stuff. The only flavor I don’t enjoy is licorice! Black, green and white teas are my favorite.</div>
+                <div class="item-meta">
+                    <a href="https://www.smithtea.com/" target="_blank" class="buy-btn smith-btn">Shop Smith Tea</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="wishlist-item">
+            <div class="rank">5</div>
+            <div class="item-details">
+                <div class="item-title">Wet Vac</div>
+                <div class="item-desc">Self explanatory. Boring but I really want it!</div>
+                <div class="item-meta">
+                    <span class="price bissell-price">$79.99</span>
+                    <a href="https://shop.bissell.com/pf/march-2026-launch/4075" target="_blank" class="buy-btn bissell-btn">Buy on Bissell</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="wishlist-item">
+            <div class="rank">6</div>
+            <div class="item-details">
+                <div class="item-title">Fun Accessories</div>
+                <div class="item-desc no-meta">I wear anything but earrings! I could use more necklaces especially.</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
